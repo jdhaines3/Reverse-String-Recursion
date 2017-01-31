@@ -68,7 +68,7 @@ int main ()
 	
 		//call reversed word function to run and print
 		reversedWord (input, size);
-		printf("Your word spelled backwards is: %s\n", input);
+		printf("Your word spelled backwards is:\n%s\n", input);
 		
 		//continue loop, only exits with N
 		printf("Would you like to continue (Y|N)? \n");
