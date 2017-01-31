@@ -14,19 +14,19 @@ void reversedWord (char [], int);
 void reversedWord (char input [], int size)
 {     
 	char temp;
-	int i;
+	int* ptrI = 0;
 	
-	i = 0;
-	
-	temp = input[i];
-    input[i] = input[size-i];
-    input[size-i] = temp;
-	i = i + 1;
-	
-    if (i > size)
+	if (*ptrI > size)
     {
         return;
     }
+	
+	
+	temp = input[*ptrI];
+	input[*ptrI] = input[size - *ptrI];
+	input[size - *ptrI] = temp;
+
+	
     reversedWord (input, size - 1);
 
 }
