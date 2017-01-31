@@ -1,0 +1,36 @@
+Assignment #1- Reverse word with recursion
+Algorithm
+-honor code at top
+-Import input/output and string libraries
+-call reverse function in order to use it later
+	-make sure it has input array and size arguments
+
+-main:
+	-create while loop for continue question at end
+		-exit while loop by answering ‘N’, else keeps running main
+	-set input variable to char type with an array max of 100 for 100 max characters
+	-set size as int
+	-ask the user for a string to reverse: print it to console
+	-use scanf to get what they input, formatted as a string-set to input variable
+	
+	-set size = length of string – 1: because we will use this in reverse function in addition to an index number to determine char placement
+	-call reverse function with arguments of input and size
+	-print to console the input array as a reversed word
+	
+	-ask user if they would like to continue
+	-if user inputs ‘N’, exit while loop and stop main
+
+-reverse:
+	-need to swap first and last letters until it gets to middle
+	-once all letters swapped, end function
+	-start by placing the first letter in a temporary variable
+	-then set first letter in array = to last letter which will be input[size]
+	-then set last letter in array to temp
+	-when doing the recursion, subtract one from size 
+
+	OR
+	-create new temp array, since its pass by reference, with max of size
+	-take last letter of input string, and add it to first slot of temp
+	-go to next letter, add to second place in temp and so on,
+	-when temp = size of input array, then set input array = temp array and end
+	
