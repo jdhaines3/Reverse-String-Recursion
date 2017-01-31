@@ -10,25 +10,37 @@
 //label functions, use semi-colon after
 void reversedWord (char [], int);
 
+//call global variable i for recursion counter
+int i = 0;
+
+
 // This function uses recursion to reverse a word in C.
 void reversedWord (char input [], int size)
 {     
-	char temp;
-	int* ptrI = 0;
-	
-	if (*ptrI > size)
+	//set temporary char for letter swap
+	char t;
+
+	//once i is greater than size, exit loop
+	//that means that the char swapping will be on or passed middle letter in string
+	if (i >= size)
     {
-        return;
+		//reset i to 0 in case the user wants to run it again
+		i = 0;
+		return;
     }
 	
+	//swap first and last letters using a temporary variable
+	//set temp = input[i] in order save first char
+	t = *(input+i);
+	//set first char position to the last char in array
+	*(input+i) = *(input + size);
+	//set the last char position in the array to the char held in temp (original first char)
+	*(input + size) = t;
 	
-	temp = input[*ptrI];
-	input[*ptrI] = input[size - *ptrI];
-	input[size - *ptrI] = temp;
-
-	
-    reversedWord (input, size - 1);
-
+	//increase counter by one in order to move to next position in array (to next unswapped char)
+	//and recursion, have size decrease by one similar to i increasing by 1
+	i = i + 1;
+	reversedWord (input, size - 1);
 }
 
 // This is our main method that is responsible for running our program.
@@ -45,6 +57,7 @@ int main ()
 		//declare input with max char 100, declare size as int
 		char input[100];
 		int size;
+		int i = 0;
 		
 		//input word to be reversed
 		printf("Please enter a word: \n");
